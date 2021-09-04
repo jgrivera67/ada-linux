@@ -1,0 +1,97 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "assignment1",
+  "steps": [
+    {
+      "file": "main.adb",
+      "description": "Call procedure to print \"greeting message\" to the console",
+      "line": 44
+    },
+    {
+      "file": "main.adb",
+      "description": "The greetings message prints the compilation timestamp for the program",
+      "line": 38,
+      "selection": {
+        "start": {
+          "line": 35,
+          "character": 1
+        },
+        "end": {
+          "line": 38,
+          "character": 71
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "description": "Call code for the assignment",
+      "line": 45
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Print the output of `uname -a` as a syslog message",
+      "line": 57,
+      "selection": {
+        "start": {
+          "line": 56,
+          "character": 2
+        },
+        "end": {
+          "line": 58,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Open a connection to the syslog",
+      "line": 59
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Print \"Hello World\" message from main thread",
+      "line": 61
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Create child thread to run function `ThreadFunc`",
+      "line": 67,
+      "selection": {
+        "start": {
+          "line": 63,
+          "character": 1
+        },
+        "end": {
+          "line": 68,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Print \"Hello World\" message from child thread",
+      "line": 48
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Wait for child thread to terminate",
+      "line": 70,
+      "selection": {
+        "start": {
+          "line": 69,
+          "character": 1
+        },
+        "end": {
+          "line": 71,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Close connection to syslog",
+      "line": 72
+    }
+  ],
+  "ref": "master"
+}

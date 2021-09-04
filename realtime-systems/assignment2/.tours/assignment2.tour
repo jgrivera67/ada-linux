@@ -1,0 +1,77 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "assignment2",
+  "steps": [
+    {
+      "file": "main.adb",
+      "description": "Call code for the assignment",
+      "line": 43
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Print uname -a output as a syslog message",
+      "line": 89
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Open syslog connection",
+      "line": 92
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Create 128 child threads",
+      "line": 101,
+      "selection": {
+        "start": {
+          "line": 94,
+          "character": 4
+        },
+        "end": {
+          "line": 101,
+          "character": 16
+        }
+      }
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Wait for all child threads to terminate",
+      "line": 106,
+      "selection": {
+        "start": {
+          "line": 103,
+          "character": 1
+        },
+        "end": {
+          "line": 107,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Close syslog connection",
+      "line": 108
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Call fucntion to calculate sum (0 .. Thread_Index)",
+      "line": 77
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Pint syslog message for the given thread",
+      "line": 81,
+      "selection": {
+        "start": {
+          "line": 80,
+          "character": 2
+        },
+        "end": {
+          "line": 82,
+          "character": 1
+        }
+      }
+    }
+  ],
+  "ref": "41db00c89ab5856df428d96495bb7cae0db14a3d"
+}

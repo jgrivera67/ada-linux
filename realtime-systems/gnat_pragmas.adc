@@ -1,0 +1,10 @@
+pragma Ada_2012;
+pragma SPARK_Mode (On);
+pragma Assertion_Policy (Check);
+pragma Restrictions (Max_Tasks => 0);
+--pragma Restrictions (No_Exception_Propagation);
+pragma Restrictions (No_Recursion);
+pragma Restrictions (No_Allocators);
+pragma Restrictions (No_Dispatch);
+--pragma Restrictions (No_Implicit_Dynamic_Code);
+--pragma Restrictions (No_Secondary_Stack);

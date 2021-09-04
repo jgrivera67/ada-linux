@@ -1,0 +1,4 @@
+Sep  6 14:45:57 raspberrypi jgrivera: [COURSE:1][ASSIGNMENT:1]: Linux raspberrypi 5.10.60-v7l+ #1449 SMP Wed Aug 25 15:00:44 BST 2021 armv7l GNU/Linux
+Sep  6 14:45:57 raspberrypi [COURSE:1][ASSIGNMENT:1]: Hello World from Main!
+Sep  6 14:45:57 raspberrypi [COURSE:1][ASSIGNMENT:1]: Hello World from Thread!
+
