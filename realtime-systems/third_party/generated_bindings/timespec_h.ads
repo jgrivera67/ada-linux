@@ -3,7 +3,7 @@ pragma Style_Checks (Off);
 
 with arm_linux_gnueabihf_bits_types_h;
 
-package arm_linux_gnueabihf_bits_types_struct_timespec_h is
+package timespec_h is
 
   -- NB: Include guard matches what <linux/time.h> uses.
   -- POSIX.1b structure for a time value.  This is like a `struct timeval' but
@@ -17,4 +17,4 @@ package arm_linux_gnueabihf_bits_types_struct_timespec_h is
    pragma Convention (C_Pass_By_Copy, timespec);  -- /usr/include/arm-linux-gnueabihf/bits/types/struct_timespec.h:9
 
   -- Nanoseconds.
-end arm_linux_gnueabihf_bits_types_struct_timespec_h;
+end timespec_h;

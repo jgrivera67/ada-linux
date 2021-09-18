@@ -5,14 +5,15 @@ with Interfaces.C; use Interfaces.C;
 with System;
 with arm_linux_gnueabihf_bits_pthreadtypes_h;
 with stddef_h;
-with arm_linux_gnueabihf_bits_types_struct_sched_param_h; use arm_linux_gnueabihf_bits_types_struct_sched_param_h;
-with arm_linux_gnueabihf_bits_types_struct_timespec_h; use arm_linux_gnueabihf_bits_types_struct_timespec_h;
+with sched_param_h; use sched_param_h;
+with timespec_h; use timespec_h;
 with arm_linux_gnueabihf_bits_setjmp_h;
 with arm_linux_gnueabihf_bits_types_h;
 
 package pthread_h is
 
    subtype pthread_t is arm_linux_gnueabihf_bits_pthreadtypes_h.pthread_t;
+   subtype pthread_attr_t is arm_linux_gnueabihf_bits_pthreadtypes_h.pthread_attr_t;
 
    --  unsupported macro: PTHREAD_CREATE_JOINABLE PTHREAD_CREATE_JOINABLE
    --  unsupported macro: PTHREAD_CREATE_DETACHED PTHREAD_CREATE_DETACHED
@@ -30,6 +31,9 @@ package pthread_h is
    --  unsupported macro: PTHREAD_CANCEL_DEFERRED PTHREAD_CANCEL_DEFERRED
    --  unsupported macro: PTHREAD_CANCEL_ASYNCHRONOUS PTHREAD_CANCEL_ASYNCHRONOUS
    --  unsupported macro: PTHREAD_CANCELED ((void *) -1)
+   PTHREAD_INHERIT_SCHED : constant := 0;
+   PTHREAD_EXPLICIT_SCHED : constant := 1;
+
    PTHREAD_ONCE_INIT : constant := 0;  --  /usr/include/pthread.h:218
 
    PTHREAD_BARRIER_SERIAL_THREAD : constant := -1;  --  /usr/include/pthread.h:225
@@ -87,7 +91,7 @@ package pthread_h is
    function pthread_attr_setguardsize (uu_attr : access arm_linux_gnueabihf_bits_pthreadtypes_h.pthread_attr_t; uu_guardsize : stddef_h.size_t) return int;  -- /usr/include/pthread.h:311
    pragma Import (C, pthread_attr_setguardsize, "pthread_attr_setguardsize");
 
-   function pthread_attr_getschedparam (uu_attr : access constant arm_linux_gnueabihf_bits_pthreadtypes_h.pthread_attr_t; uu_param : access arm_linux_gnueabihf_bits_types_struct_sched_param_h.sched_param) return int;  -- /usr/include/pthread.h:317
+   function pthread_attr_getschedparam (uu_attr : access constant arm_linux_gnueabihf_bits_pthreadtypes_h.pthread_attr_t; uu_param : access sched_param_h.sched_param) return int;  -- /usr/include/pthread.h:317
    pragma Import (C, pthread_attr_getschedparam, "pthread_attr_getschedparam");
 
    function pthread_attr_setschedparam (uu_attr : access arm_linux_gnueabihf_bits_pthreadtypes_h.pthread_attr_t; uu_param : access constant sched_param) return int;  -- /usr/include/pthread.h:322
@@ -144,7 +148,7 @@ package pthread_h is
    function pthread_getschedparam
      (uu_target_thread : arm_linux_gnueabihf_bits_pthreadtypes_h.pthread_t;
       uu_policy : access int;
-      uu_param : access arm_linux_gnueabihf_bits_types_struct_sched_param_h.sched_param) return int;  -- /usr/include/pthread.h:435
+      uu_param : access sched_param_h.sched_param) return int;  -- /usr/include/pthread.h:435
    pragma Import (C, pthread_getschedparam, "pthread_getschedparam");
 
    function pthread_setschedprio (uu_target_thread : arm_linux_gnueabihf_bits_pthreadtypes_h.pthread_t; uu_prio : int) return int;  -- /usr/include/pthread.h:441
