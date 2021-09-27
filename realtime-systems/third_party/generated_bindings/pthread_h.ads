@@ -1,4 +1,4 @@
-pragma Ada_2005;
+--pragma Ada_2005;
 pragma Style_Checks (Off);
 
 with Interfaces.C; use Interfaces.C;
@@ -138,6 +138,20 @@ package pthread_h is
       uu_stackaddr : System.Address;
       uu_stacksize : stddef_h.size_t) return int;  -- /usr/include/pthread.h:390
    pragma Import (C, pthread_attr_setstack, "pthread_attr_setstack");
+
+   CPU_SETSIZE : constant := 4;
+
+   type cpu_mask_t is array (0 .. 0) of Interfaces.C.unsigned_long with Convention => C;
+
+   type cpu_set_t is record
+      cpu_mask : cpu_mask_t;
+   end record with Convention => C;
+
+   function pthread_attr_setaffinity_np
+     (uu_attr : access arm_linux_gnueabihf_bits_pthreadtypes_h.pthread_attr_t;
+      uu_cpusetsize : stddef_h.size_t;
+      uu_cpuset : access cpu_set_t) return int;  -- /usr/include/pthread.h:397
+   pragma Import (C, pthread_attr_setaffinity_np, "pthread_attr_setaffinity_np");
 
    function pthread_setschedparam
      (uu_target_thread : arm_linux_gnueabihf_bits_pthreadtypes_h.pthread_t;

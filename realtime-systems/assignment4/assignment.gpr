@@ -1,0 +1,79 @@
+project assignment is
+
+   Executable_Prefix := "assignment4";
+
+   COMMON_FLAGS := ("-Wall",
+                    "-ffunction-sections",
+                    "-fdata-sections",
+                    "-O0",
+		    "-g");
+
+   --for Languages use ("Ada", "C");
+   for Languages use ("Ada");
+
+   for Main use ("main.adb");
+
+   for Source_Dirs use (".",
+                        "../third_party/generated_bindings");
+
+   for Object_Dir use "obj";
+
+   for Exec_Dir  use ".";
+
+   package Naming is
+      for Spec_Suffix ("C") use ".h";
+      for Body_Suffix ("C") use ".c";
+   end Naming;
+
+   package Compiler is
+
+      for Default_Switches ("Ada") use
+ 	    COMMON_FLAGS &
+            ("-gnatwa", "-gnatQ", "-gnat12",
+             -- "-fstack-check", --  Generate stack checking code (part of Ada)
+             "-gnata",           --  Enable assertions            (part of Ada)
+             "-gnato13",         --  Overflow checking            (part of Ada)
+             "-gnatn",           --  Inline subprograms marked for inlining
+             "-gnatf",                      --  Full, verbose error messages
+             "-gnatwa",                     --  All optional warnings
+             "-gnatVa",                     --  All validity checks
+             --"-gnaty3abcdefhiklmnoOprstux", --  Style checks
+             "-gnaty3",                     --  Style checks
+             "-gnatwe",                     --  Treat warnings as errors
+             "-gnat2012");                  --  Use Ada 2012
+
+      for Default_Switches ("C") use COMMON_FLAGS &
+                                     ("-std=gnu11",
+                                      "-Wstrict-prototypes",
+                                      "-fms-extensions",
+                                      "-Wextra",
+                                      "-Wformat",
+                                      "-Wunreachable-code",
+                                      "-Wshadow",
+                                      "-Wmissing-prototypes",
+                                      "-Wpointer-arith",
+                                      "-Winline",
+                                      "-Werror",
+                                      "-Wstack-usage=224",
+                                      "-Wundef",
+                                      "-Wdouble-promotion",
+	                              "-DDEBUG");
+
+      for Default_Switches ("Asm_Cpp") use COMMON_FLAGS;
+
+      for Local_Configuration_Pragmas use "../gnat_pragmas.adc";
+
+   end Compiler;
+
+   package Linker is
+      for Default_Switches ("Ada") use COMMON_FLAGS &
+                                     ("-Wl,-Map=" & Executable_Prefix & ".map",
+				      --"-Xlinker", "--gc-sections",
+	                              "-lpthread");
+   end Linker;
+
+   package Builder is
+      for Executable ("main.adb") use Executable_Prefix & ".elf";
+   end Builder;
+
+end assignment;
