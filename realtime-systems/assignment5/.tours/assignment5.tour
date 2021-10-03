@@ -1,0 +1,61 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "assignment5",
+  "steps": [
+    {
+      "file": "assignment.adb",
+      "description": "Set SCHED_FIFO policy and maximum priority for the main thread, so that we don't get preempted while creating child threads.",
+      "line": 158
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Set attributes to create child threads using SCHED_FIFO policy and priority one less than the maximum priority",
+      "line": 164
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Create child threads",
+      "line": 168
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Wait for all child threads to terminate",
+      "line": 176
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Set scheduling policty to SCHED_FIFO",
+      "line": 99,
+      "selection": {
+        "start": {
+          "line": 97,
+          "character": 1
+        },
+        "end": {
+          "line": 101,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Set thread prioirty ",
+      "line": 103
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Force thread to execute only on the given CPU",
+      "line": 107
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Compute Sum for this thread: 0 to Thread_Index",
+      "line": 133
+    },
+    {
+      "file": "assignment.adb",
+      "description": "Print syslog message for this thread",
+      "line": 136
+    }
+  ]
+}
